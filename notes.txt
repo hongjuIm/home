@@ -1,0 +1,431 @@
+Basic Commands
+
+ls:
+Displays the contents of a directory.
+
+pwd:
+Prints the current directory path you're working in.
+
+cd:
+Changes your current directory. Use this to navigate between folders. To go back to the previous directory, move up one level.
+
+mkdir:
+Creates a new folder.
+
+touch:
+Creates an empty file.
+
+rm:
+Deletes a file. You can also remove directories along with their contents.
+
+cp:
+Copies files or directories from one location to another.
+
+mv:
+Moves files or folders.
+
+cat:
+Shows the contents of a file directly in the terminal.
+
+cd /
+cd ~
+
+Process Management
+
+top:
+Displays a real-time view of system processes and how much memory or CPU they’re using.
+
+ps:
+Shows a list of active processes running on the system at the moment.
+
+kill:
+Terminates a process using its process ID.
+
+df:
+Provides an overview of how much disk space is being used.
+
+du:
+Shows the size of directories and files on the disk.
+
+free:
+Displays the amount of free and used memory (RAM and swap) in the system.
+
+File Permissions & Ownership
+
+chmod:mkdtou
+Modifies file permissions, allowing you to set who can read, write, or execute a file.
+
+chown:
+Changes the ownership of files or directories, allowing you to assign them to a different user or group.
+
+ls -l:
+Lists files with detailed information, including their permissions and ownership.
+
+Networking Commands
+
+ifconfig or ip a:
+Shows details about your network interfaces, such as IP addresses and network connections.
+
+ping:
+Tests if a remote server is reachable by sending small chunks of data and checking for a response.
+
+traceroute:
+Traces the path your data takes to reach a particular server or host.
+
+netstat:
+Displays network connections, routing tables, and interface statistics. Useful for checking open ports.
+
+nmap:
+Scans networks to detect open ports, services, and security risks.
+
+Package Management
+
+sudo apt-get update:
+Updates the package database, ensuring you have the latest information on available software.
+
+sudo apt-get upgrade:
+Upgrades all installed packages to their latest versions.
+
+sudo apt-get install:
+Installs new software or tools from the repositories.
+
+sudo apt-get remove:
+Uninstalls software you no longer need.
+
+Linux Vocab
+
+Ethical Hacking: The practice of intentionally testing system security to uncover vulnerabilities before malicious attackers do.
+
+Penetration Testing: Conducting attacks on a system to assess its defenses and identify weaknesses.
+
+Firewall: A security system that controls incoming and outgoing network traffic based on predetermined rules.
+
+Vulnerability: A flaw or weakness in a system that could be exploited by attackers.
+
+Exploit: A specific method or tool used to take advantage of a vulnerability.
+
+Patch: A software update designed to fix bugs, security issues, or other problems.
+
+Malware: Harmful software like viruses, worms, or ransomware designed to damage or compromise systems.
+
+Zero-Day: A security flaw that is exploited before the vendor has issued a fix.
+
+Encryption: The process of encoding data so that it can only be accessed by authorized individuals.
+
+IP Address: A unique identifier assigned to devices on a network for communication purposes.
+
+Working with Files and Directories
+
+Create:
+
+touch file.txt: Create a file.
+
+mkdir folder: Create a directory.
+
+Read:
+
+cat file.txt: Display file content.
+
+Update:
+
+nano file.txt: Edit a file.
+
+echo "text" >> file.txt: Append text to a file.
+
+Delete:
+
+rm file.txt: Delete a file.
+
+rmdir folder: Delete an empty directory.
+
+rm -r folder: Delete a directCHMory and its contents.
+
+3. Managing Permissions with chmod
+
+chmod u+x file: Add execute permission for user.
+
+chmod 755 file: Set read/write/execute permissions (owner: full, others: read/execute).
+
+4. Using sudo
+
+sudo command: Run a command with superuser privileges.
+
+sudo apt update: Update package lists.
+
+Git commands:
+
+Initialize Repository:
+
+git init
+
+Configure Git:
+
+git config --global user.name
+
+git config --global user.email
+
+Check Status:
+
+git status
+
+Stage Files:
+
+git add filename
+
+git add .
+
+Commit Changes:
+
+git commit -m "message"
+
+View Log:
+
+git log
+
+Create and Switch Branch:
+
+git checkout -b branch-name
+
+Switch Branch:
+
+git checkout branch-name
+
+Merge Branches:
+
+git merge branch-name
+
+Delete Branch:
+
+git branch -d branch-name
+
+Undo Changes in Working Directory:
+
+Using git restore (newer versions): git restore filename
+
+Using git checkout (older versions): git checkout -- filename
+
+Remove Cached File:
+
+git rm --cached filename
+
+Set Alias:
+
+git config --global alias.alias-name command
+
+Tag a Commit:
+
+git tag -a v1.0 -m "message"
+
+Reset Commits:
+
+git reset --soft HEAD~1
+
+git reset --hard HEAD~1
+
+Bash Scripting
+1. Definition:
+Bash Script: A Bash script is a text file containing a series of commands that are executed by the Bash shell. It is used to automate tasks, manage system configurations, and execute complex command sequences in Linux.
+2. Basic Syntax:
+Simple Bash Script Example:
+
+bash
+#!/bin/bash
+echo "Hello, World!"
+Using Variables:
+
+bash
+name="John"
+echo "Hello, $name!"
+Control Structures:
+
+if-else:
+
+bash
+#!/bin/bash
+read -p "Enter your name: " name
+# asks for name
+if [ "$name" == "Hongju" ]; then
+    echo "Valid name"
+else
+    echo "Invalid name"
+fi
+for Loop:
+
+bash
+for i in {1..5}; do
+    echo "Number: $i"
+done
+while Loop:
+
+bash
+counter=0
+while [ $counter -lt 5 ]; do
+    echo "Counter: $counter"
+    ((counter++))
+done
+
+ infinite loop:
+while true; do
+    echo yay
+done
+
+count=1: Initializes the count variable.
+while [ $count -le 5 ]: The loop will continue as long as count is less than or equal to 5.
+((count++)): Increases the value of count by 1 after each loop.
+
+ Key Bash Commands:
+
+echo: Prints text to the terminal.
+
+Example: echo "Hello"
+
+read: Reads user input.
+
+Example:
+bash
+
+echo "Enter your name:"
+
+read name
+
+echo "Hello, $name"
+
+touch: Creates an empty file.
+
+Example: touch newfile.txt
+
+Test Script: Script to check if a directory exists and
+create it if it doesn't.
+
+bash
+#!/bin/bash
+dir="my_directory"
+if [ -d "$dir" ]; then
+    echo "$dir exists."
+else
+    mkdir "$dir"
+    echo "$dir created."
+fi
+
+Basic Syntax:
+Simple Bash Script Example:
+
+Start with #!/bin/bash at the top of the script. This tells the system to use the Bash shell.
+Use the echo command to print text to the terminal, like “Hello, World!”
+Using Variables:
+
+Assign a value to a variable (for example, name="John").
+Print the variable using echo and the variable name prefixed with a dollar sign (e.g., echo "Hello, $name!").
+Control Structures:
+
+if-else:
+
+Use the if statement to check a condition (e.g., if a number is greater than or equal to 18).
+If the condition is true, run the first set of commands (e.g., print “You are an adult.”).
+Use else to handle what happens if the condition is false (e.g., print “You are a minor.”).
+
+For Loop:
+
+Use a for loop to repeat a set of commands a specified number of times. For example, print numbers from 1 to 5.
+while Loop:
+
+Use a while loop to keep running commands as long as a condition is true (e.g., increment a counter while it’s less than 5).
+example script:
+ #!/bin/bash
+attempts=0  # Initialize attempts counter
+
+while [ $attempts -lt 3 ]; do
+    read -p "Enter your name: " name  # Prompt for the name
+    if [ "$name" == "Hongju" ]; then
+        echo "Valid name"
+        break  # Exit the loop if the name is correct
+    else
+        echo "Invalid name"
+        ((attempts++))  # Increment the attempts counter
+        echo "Attempt $attempts of 3"
+    fi
+done
+
+if [ $attempts -eq 3 ]; then
+    echo "Out of attempts."
+fi
+
+3.
+Key Bash Commands:
+echo: This command prints text to the terminal (e.g., echo "Hello").
+read: Reads input from the user and stores it in a variable (e.g., ask for the user’s name and store it in a variable called name).
+touch: Creates an empty file (e.g., touch newfile.txt).
+
+4.
+Test Script: To create a script that checks if a directory exists and, if not, creates it:
+Use if to check if the directory exists.
+If it exists, print a message that the directory already exists.
+If it doesn’t exist, use the mkdir command to create the directory, and then print a message saying the directory was created.
+
+ System Monitoring
+1. Definition:
+
+System Monitoring: This involves tracking the performance and resource usage (such as CPU, memory, and disk space) of a Linux system to maintain stability and detect issues.
+
+2. Key Tools:
+
+top: This command displays real-time information about system processes and resource usage. To use it, simply type top.
+
+htop: Similar to top, but with a more user-friendly interface. Install it using sudo apt install htop, then run it by typing htop.
+
+df: Displays information about disk space usage. Use
+ df -h to show human-readable results (e.g., in gigabytes).
+
+uptime: Shows how long the system has been running, along with the system load. To use it, type uptime.
+
+Log Monitoring:
+
+journalctl: This command is used to view system logs. For example, journalctl -xe shows logs with extra detail.
+
+/var/log: This directory contains system log files. Use commands like tail /var/log/syslog to view the end of the system log.
+
+Regex:
+
+#!/bin/bash
+read -p "Enter an email address: " email
+
+if [[ $email =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]
+then
+  echo "Valid email address."
+else
+  echo "Invalid email address."
+fi
+Explanation:
+read -p "Enter an email address: " email: Prompts the user to input an email address.
+
+[[ $email =~ ... ]]: This uses regex to check if the entered email matches the pattern.
+
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$: This is the regular expression that matches a basic email structure.
+
+It checks for:
+^[a-zA-Z0-9._%+-]+: The username part (before the @ symbol) which allows letters, numbers, dots, underscores, and other special characters.
+
+@[a-zA-Z0-9.-]+: The domain part (after the @ symbol) which allows letters, numbers, dots, and hyphens.
+
+\.[a-zA-Z]{2,}$: Ensures a dot followed by at least two letters (for top-level domains like .com, .net, etc.).
+
+Example script:
+#!/bin/bash
+
+# Read user input
+read -p "Enter your email address: " email
+
+# Regex pattern to validate an email format
+email_pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+# Check if the input matches a valid email format
+if [[ "$email" =~ $email_pattern ]]; then
+    # Check if the email is specifically 'hongjuim@gmail.com'
+    if [[ "$email" == "hongjuim@gmail.com" ]]; then
+        echo "The email matches hongjuim@gmail.com"
+    else
+        echo "The email is valid but does not match hongjuim@gmail.com"
+    fi
+else
+    echo "Invalid email format"
+fi
