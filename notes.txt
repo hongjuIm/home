@@ -151,7 +151,9 @@ chmod 755 file: Set read/write/execute permissions (owner: full, others: read/ex
 sudo command: Run a command with superuser privileges.
 
 sudo apt update: Update package lists.
-
+Octal notation: d|rwx|rwx|rwx 
+d = directory r = read w= write x= executable 
+4 2 1
 Git commands:
 
 Initialize Repository:
