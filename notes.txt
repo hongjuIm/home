@@ -154,6 +154,7 @@ sudo apt update: Update package lists.
 Octal notation: d|rwx|rwx|rwx 
 d = directory r = read w= write x= executable 
 4 2 1
+chmod 777
 Git commands:
 
 Initialize Repository:
